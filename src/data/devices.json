@@ -1,0 +1,555 @@
+[
+  {
+    "id": "tapco-s5",
+    "name": "Tapco S5 Monitors",
+    "manufacturer": "Tapco",
+    "category": "Studio Monitor",
+    "description": "Pair of active studio monitors with balanced inputs.",
+    "tags": ["monitor", "no_test_sound"],
+    "ports": [
+      {
+        "id": "tapco-s5-left-in",
+        "label": "Left TRS Input",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line input."
+      },
+      {
+        "id": "tapco-s5-right-in",
+        "label": "Right TRS Input",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line input."
+      },
+      {
+        "id": "tapco-s5-left-combo",
+        "label": "Left Combo Input",
+        "direction": "in",
+        "connector": "combo_xlr_trs",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "xlr",
+        "notes": "Accepts XLR, TRS 1/4\", or TS 1/4\" connectors."
+      },
+      {
+        "id": "tapco-s5-right-combo",
+        "label": "Right Combo Input",
+        "direction": "in",
+        "connector": "combo_xlr_trs",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "xlr",
+        "notes": "Accepts XLR, TRS 1/4\", or TS 1/4\" connectors."
+      }
+    ]
+  },
+  {
+    "id": "scarlett-2i2",
+    "name": "Focusrite Scarlett 2i2",
+    "manufacturer": "Focusrite",
+    "category": "Audio Interface",
+    "description": "Bus-powered USB audio interface with balanced line I/O.",
+    "ports": [
+      {
+        "id": "scarlett-line-in-1",
+        "label": "Input 1 (Line)",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line input on combo jack."
+      },
+      {
+        "id": "scarlett-line-in-2",
+        "label": "Input 2 (Line)",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line input on combo jack."
+      },
+      {
+        "id": "scarlett-monitor-out-l",
+        "label": "Monitor Out L",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced monitor output left channel."
+      },
+      {
+        "id": "scarlett-monitor-out-r",
+        "label": "Monitor Out R",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced monitor output right channel."
+      },
+      {
+        "id": "scarlett-headphone",
+        "label": "Headphone Out",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": true,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Stereo headphone output."
+      }
+    ]
+  },
+  {
+    "id": "arturia-keystep",
+    "name": "Arturia KeyStep",
+    "manufacturer": "Arturia",
+    "category": "Controller",
+    "description": "Compact keyboard controller with sequencer and MIDI outputs.",
+    "ports": [
+      {
+        "id": "keystep-midi-out",
+        "label": "MIDI Out",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "5-pin DIN MIDI output."
+      },
+      {
+        "id": "keystep-midi-thru",
+        "label": "MIDI Thru",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "5-pin DIN MIDI thru mirroring the MIDI In."
+      },
+      {
+        "id": "keystep-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "5-pin DIN MIDI input."
+      },
+      {
+        "id": "keystep-sync-out",
+        "label": "Sync Out",
+        "direction": "out",
+        "connector": "trs_3.5mm",
+        "signals": ["sync"],
+        "notes": "Analog clock output selectable PPQ."
+      }
+    ]
+  },
+  {
+    "id": "digitakt",
+    "name": "Elektron Digitakt",
+    "manufacturer": "Elektron",
+    "category": "Groovebox",
+    "description": "Sample-based groovebox with eight audio tracks and MIDI sequencing.",
+    "ports": [
+      {
+        "id": "digitakt-audio-out-l",
+        "label": "Audio Out L",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line output."
+      },
+      {
+        "id": "digitakt-audio-out-r",
+        "label": "Audio Out R",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Balanced 1/4\" TRS line output."
+      },
+      {
+        "id": "digitakt-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "digitakt-midi-out",
+        "label": "MIDI Out",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "digitakt-midi-thru",
+        "label": "MIDI Thru",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "Mirrors incoming MIDI clock and note data."
+      },
+      {
+        "id": "digitakt-usb",
+        "label": "USB",
+        "direction": "in_out",
+        "connector": "usb_b",
+        "signals": ["usb_audio", "usb_midi"],
+        "notes": "Overbridge support provides multitrack audio."
+      }
+    ]
+  },
+  {
+    "id": "circuit",
+    "name": "Novation Circuit Tracks",
+    "manufacturer": "Novation",
+    "category": "Groovebox",
+    "description": "Portable groovebox with synth and drum tracks.",
+    "ports": [
+      {
+        "id": "circuit-audio-l",
+        "label": "Audio Out L",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS"
+      },
+      {
+        "id": "circuit-audio-r",
+        "label": "Audio Out R",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TRS"
+      },
+      {
+        "id": "circuit-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "Supports clock and note data; TRS adapter required for 3.5 mm MIDI."
+      },
+      {
+        "id": "circuit-midi-out",
+        "label": "MIDI Out",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "circuit-sync-out",
+        "label": "Sync Out",
+        "direction": "out",
+        "connector": "trs_3.5mm",
+        "signals": ["sync"],
+        "notes": "Outputs analog pulse clock."
+      },
+      {
+        "id": "circuit-usb",
+        "label": "USB-C",
+        "direction": "in_out",
+        "connector": "usb_c",
+        "signals": ["usb_midi", "usb_audio"],
+        "notes": "USB audio available when connected to Novation Components."
+      }
+    ]
+  },
+  {
+    "id": "mu50",
+    "name": "Yamaha MU50",
+    "manufacturer": "Yamaha",
+    "category": "Sound Module",
+    "description": "General MIDI / XG sound module with effects processing.",
+    "ports": [
+      {
+        "id": "mu50-audio-l",
+        "label": "Audio Out L",
+        "direction": "out",
+        "connector": "ts_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TS"
+      },
+      {
+        "id": "mu50-audio-r",
+        "label": "Audio Out R",
+        "direction": "out",
+        "connector": "ts_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": false,
+        "physicalConnector": "quarter-inch-TS"
+      },
+      {
+        "id": "mu50-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "mu50-midi-out",
+        "label": "MIDI Out",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      }
+    ]
+  },
+  {
+    "id": "volca-keys",
+    "name": "Korg Volca Keys",
+    "manufacturer": "Korg",
+    "category": "Analog Synth",
+    "description": "Compact analog polysynth with sequencer.",
+    "ports": [
+      {
+        "id": "volca-sync-in",
+        "label": "Sync In",
+        "direction": "in",
+        "connector": "trs_3.5mm",
+        "signals": ["sync"],
+        "notes": "Compatible with Volca sync pulse clock."
+      },
+      {
+        "id": "volca-sync-out",
+        "label": "Sync Out",
+        "direction": "out",
+        "connector": "trs_3.5mm",
+        "signals": ["sync"]
+      },
+      {
+        "id": "volca-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "volca-audio-out",
+        "label": "Audio Out",
+        "direction": "out",
+        "connector": "trs_3.5mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "stereo": true,
+        "physicalConnector": "eighth-inch-TRS"
+      }
+    ]
+  },
+  {
+    "id": "tascam-model-12",
+    "name": "Tascam Model 12",
+    "manufacturer": "Tascam",
+    "category": "Mixer",
+    "description": "Compact mixer with multitrack USB audio interface and MIDI integration.",
+    "tags": ["no_test_sound"],
+    "ports": [
+      {
+        "id": "model12-main-out-l",
+        "label": "Main Out L",
+        "direction": "out",
+        "connector": "xlr",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "xlr",
+        "notes": "Balanced XLR master output."
+      },
+      {
+        "id": "model12-main-out-r",
+        "label": "Main Out R",
+        "direction": "out",
+        "connector": "xlr",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "xlr",
+        "notes": "Balanced XLR master output."
+      },
+      {
+        "id": "model12-sub-out-l",
+        "label": "Sub Out L",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Assignable sub mix send (balanced TRS)."
+      },
+      {
+        "id": "model12-sub-out-r",
+        "label": "Sub Out R",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Assignable sub mix send (balanced TRS)."
+      },
+      {
+        "id": "model12-aux-send-1",
+        "label": "Aux Send 1",
+        "direction": "out",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Single mono aux send for external effects."
+      },
+      {
+        "id": "model12-aux-return-l",
+        "label": "Aux Return L",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Stereo aux return (use with Aux Return R)."
+      },
+      {
+        "id": "model12-aux-return-r",
+        "label": "Aux Return R",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Stereo aux return (use with Aux Return L)."
+      },
+      {
+        "id": "model12-channel-1",
+        "label": "Channel 1 Mic/Line",
+        "direction": "in",
+        "connector": "combo_xlr_trs",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "xlr",
+        "notes": "Combo mic/line input with preamp and Hi-Z switch."
+      },
+      {
+        "id": "model12-channel-2",
+        "label": "Channel 2 Mic/Line",
+        "direction": "in",
+        "connector": "combo_xlr_trs",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "xlr",
+        "notes": "Combo mic/line input with preamp."
+      },
+      {
+        "id": "model12-stereo-3-4",
+        "label": "Channel 3 Line In",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Line level input (L)."
+      },
+      {
+        "id": "model12-stereo-4",
+        "label": "Channel 4 Line In",
+        "direction": "in",
+        "connector": "trs_6.35mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "quarter-inch-TRS",
+        "notes": "Line level input (R)."
+      },
+      {
+        "id": "model12-stereo-5",
+        "label": "Channel 5 Line In",
+        "direction": "in",
+        "connector": "trs_3.5mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "eighth-inch-TRS",
+        "notes": "Line level input (L) via 3.5 mm."
+      },
+      {
+        "id": "model12-stereo-6",
+        "label": "Channel 6 Line In",
+        "direction": "in",
+        "connector": "trs_3.5mm",
+        "signals": ["audio"],
+        "domain": "audio",
+        "physicalConnector": "eighth-inch-TRS",
+        "notes": "Line level input (R) via 3.5 mm."
+      },
+      {
+        "id": "model12-midi-in",
+        "label": "MIDI In",
+        "direction": "in",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5"
+      },
+      {
+        "id": "model12-midi-out",
+        "label": "MIDI Out",
+        "direction": "out",
+        "connector": "din_5",
+        "signals": ["midi"],
+        "domain": "midi",
+        "physicalConnector": "din5",
+        "notes": "Sends MIDI clock for sync."
+      },
+      {
+        "id": "model12-usb",
+        "label": "USB-C",
+        "direction": "in_out",
+        "connector": "usb_c",
+        "signals": ["usb_audio", "usb_midi"],
+        "notes": "12-in/10-out USB audio interface with DAW transport control."
+      }
+    ]
+  }
+]
