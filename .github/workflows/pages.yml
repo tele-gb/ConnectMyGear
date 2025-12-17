@@ -35,7 +35,7 @@ jobs:
 
   deploy_fallback:
     if: ${{ needs.deploy.conclusion == 'failure' }}
-    needs: build
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
