@@ -48,15 +48,15 @@ export interface DeviceInstance {
 
 const LEGACY_CONNECTOR_MAP: Record<PortConnector, PhysicalConnector | undefined> = {
   din_5: 'din5',
-  'trs_3.5mm': 'eighth-inch-TRS',
-  'ts_6.35mm': 'quarter-inch-TS',
-  'trs_6.35mm': 'quarter-inch-TRS',
-  'combo_xlr_trs': 'quarter-inch-TRS',
+  'trs_3.5mm': '3.5mm-trs',
+  'ts_6.35mm': '6.35mm-ts',
+  'trs_6.35mm': '6.35mm-trs',
+  'combo_xlr_trs': '6.35mm-trs',
   xlr: 'xlr',
   rca: 'rca' as PhysicalConnector,
-  'quarter-inch-TS': 'quarter-inch-TS' as PhysicalConnector,
-  'quarter-inch-TRS': 'quarter-inch-TRS' as PhysicalConnector,
-  'eighth-inch-TRS': 'eighth-inch-TRS' as PhysicalConnector,
+  '6.35mm-ts': '6.35mm-ts' as PhysicalConnector,
+  '6.35mm-trs': '6.35mm-trs' as PhysicalConnector,
+  '3.5mm-trs': '3.5mm-trs' as PhysicalConnector,
   din5: 'din5' as PhysicalConnector,
   'trs-midi': 'trs-midi' as PhysicalConnector,
   usb_c: undefined,
@@ -68,24 +68,22 @@ const LEGACY_CONNECTOR_MAP: Record<PortConnector, PhysicalConnector | undefined>
 };
 
 const ADAPTER_MATRIX: Record<string, string[]> = {
-  'eighth-inch-TRS:quarter-inch-TRS': ['stereo-breakout-cable'],
-  'eighth-inch-TRS:quarter-inch-TS': ['stereo-breakout-cable'],
-  'trs-midi:din5': ['trs-midi-to-din5'],
-  'quarter-inch-TS:quarter-inch-TRS': ['ts-to-trs-adapter']
+  '3.5mm-trs:6.35mm-trs': ['stereo-breakout-cable'],
+  '3.5mm-trs:6.35mm-ts': ['stereo-breakout-cable'],
+  'trs-midi:din5': ['trs-midi-to-din5']
 };
 
 const ADAPTER_LABELS: Record<string, string> = {
   'stereo-breakout-cable': 'TRS stereo breakout cable',
-  'trs-midi-to-din5': 'TRS-A to DIN-5 MIDI cable',
-  'ts-to-trs-adapter': 'TS to TRS adapter'
+  'trs-midi-to-din5': 'TRS-A to DIN-5 MIDI cable'
 };
 
 const PHYSICAL_CONNECTORS: PhysicalConnector[] = [
-  'quarter-inch-TS',
-  'quarter-inch-TRS',
+  '6.35mm-ts',
+  '6.35mm-trs',
   'xlr',
   'rca',
-  'eighth-inch-TRS',
+  '3.5mm-trs',
   'din5',
   'trs-midi'
 ];
@@ -128,6 +126,13 @@ function getPortDomain(port: Port): PortDomain | undefined {
   return undefined;
 }
 
+function getAudioWiring(port: Port): Port['audioWiring'] | undefined {
+  if (!port.signals.includes('audio')) {
+    return undefined;
+  }
+  return port.audioWiring;
+}
+
 function resolveAdapterChain(from: PhysicalConnector, to: PhysicalConnector): string[] | undefined {
   const forward = ADAPTER_MATRIX[`${from}:${to}`];
   if (forward) {
@@ -154,9 +159,9 @@ function getConnectorCompatibility(fromPort: Port, toPort: Port): ConnectorCompa
       return { compatible: true, resultingConnector: toPhysical, adapterCodes };
     }
 
-    const quarterInchPairs = new Set<PhysicalConnector>(['quarter-inch-TS', 'quarter-inch-TRS']);
-    if (quarterInchPairs.has(fromPhysical) && quarterInchPairs.has(toPhysical)) {
-      return { compatible: true, resultingConnector: 'quarter-inch-TS' };
+    const sixPointThreeFivePairs = new Set<PhysicalConnector>(['6.35mm-ts', '6.35mm-trs']);
+    if (sixPointThreeFivePairs.has(fromPhysical) && sixPointThreeFivePairs.has(toPhysical)) {
+      return { compatible: true, resultingConnector: '6.35mm-ts' };
     }
   }
 
@@ -168,14 +173,14 @@ function getConnectorCompatibility(fromPort: Port, toPort: Port): ConnectorCompa
     (fromPort.connector === 'combo_xlr_trs' && toPort.connector === 'trs_6.35mm') ||
     (toPort.connector === 'combo_xlr_trs' && fromPort.connector === 'trs_6.35mm')
   ) {
-    return { compatible: true, resultingConnector: 'quarter-inch-TRS' };
+    return { compatible: true, resultingConnector: '6.35mm-trs' };
   }
 
   if (
     (fromPort.connector === 'combo_xlr_trs' && toPort.connector === 'ts_6.35mm') ||
     (toPort.connector === 'combo_xlr_trs' && fromPort.connector === 'ts_6.35mm')
   ) {
-    return { compatible: true, resultingConnector: 'quarter-inch-TS' };
+    return { compatible: true, resultingConnector: '6.35mm-ts' };
   }
 
   return { compatible: false };
@@ -328,6 +333,28 @@ export function inferConnections(
 
         requiredCables.push(cableSuggestion);
 
+        const fromAudioWiring = getAudioWiring(fromPort);
+        const toAudioWiring = getAudioWiring(toPort);
+
+        if (fromAudioWiring && toAudioWiring) {
+          const wiringPair = new Set([fromAudioWiring, toAudioWiring]);
+
+          if (wiringPair.has('balanced_mono') && wiringPair.has('unbalanced_mono')) {
+            advisoryMessages.push(
+              'Balanced/unbalanced audio mismatch: connection will work but becomes unbalanced (possible noise/level change).'
+            );
+          }
+
+          if (
+            wiringPair.has('unbalanced_stereo') &&
+            (wiringPair.has('balanced_mono') || wiringPair.has('unbalanced_mono'))
+          ) {
+            advisoryMessages.push(
+              'Stereo-to-mono audio mismatch: one channel may be lost, or the mono result may sound wrong.'
+            );
+          }
+        }
+
         const fromDeviceLabel =
           connection.from.deviceName ?? fromDevice?.name ?? connection.from.deviceId;
         const toDeviceLabel = connection.to.deviceName ?? toDevice?.name ?? connection.to.deviceId;
@@ -462,16 +489,16 @@ function describeConnector(connector: PortConnector): string {
       return 'DIN-5 MIDI';
     case 'trs_3.5mm':
       return '3.5 mm TRS';
-    case 'eighth-inch-TRS':
+    case '3.5mm-trs':
       return '3.5 mm TRS';
     case 'ts_6.35mm':
-      return '1/4" TS';
-    case 'quarter-inch-TS':
-      return '1/4" TS';
+      return '6.35 mm TS';
+    case '6.35mm-ts':
+      return '6.35 mm TS';
     case 'trs_6.35mm':
-      return '1/4" TRS';
-    case 'quarter-inch-TRS':
-      return '1/4" TRS';
+      return '6.35 mm TRS';
+    case '6.35mm-trs':
+      return '6.35 mm TRS';
     case 'rca':
       return 'RCA';
     case 'usb_c':

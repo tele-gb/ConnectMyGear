@@ -1,13 +1,15 @@
 export type PortDirection = 'in' | 'out' | 'in_out';
 
 export type PhysicalConnector =
-  | 'quarter-inch-TS'
-  | 'quarter-inch-TRS'
+  | '6.35mm-ts'
+  | '6.35mm-trs'
   | 'xlr'
   | 'rca'
-  | 'eighth-inch-TRS'
+  | '3.5mm-trs'
   | 'din5'
   | 'trs-midi';
+
+export type AudioWiring = 'balanced_mono' | 'unbalanced_mono' | 'unbalanced_stereo';
 
 export type PortDomain = 'audio' | 'midi';
 
@@ -42,6 +44,7 @@ export interface Port {
   signals: PortSignal[];
   domain?: PortDomain;
   stereo?: boolean;
+  audioWiring?: AudioWiring;
   physicalConnector?: PhysicalConnector;
   notes?: string;
 }

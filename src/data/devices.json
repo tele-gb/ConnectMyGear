@@ -5,17 +5,23 @@
     "manufacturer": "Tapco",
     "category": "Studio Monitor",
     "description": "Pair of active studio monitors with balanced inputs.",
-    "tags": ["monitor", "no_test_sound"],
+    "tags": [
+      "monitor",
+      "no_test_sound"
+    ],
     "ports": [
       {
         "id": "tapco-s5-left-in",
         "label": "Left TRS Input",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line input."
       },
       {
@@ -23,10 +29,13 @@
         "label": "Right TRS Input",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line input."
       },
       {
@@ -34,7 +43,9 @@
         "label": "Left Combo Input",
         "direction": "in",
         "connector": "combo_xlr_trs",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
         "physicalConnector": "xlr",
@@ -45,7 +56,9 @@
         "label": "Right Combo Input",
         "direction": "in",
         "connector": "combo_xlr_trs",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
         "physicalConnector": "xlr",
@@ -65,10 +78,13 @@
         "label": "Input 1 (Line)",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line input on combo jack."
       },
       {
@@ -76,10 +92,13 @@
         "label": "Input 2 (Line)",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line input on combo jack."
       },
       {
@@ -87,10 +106,13 @@
         "label": "Monitor Out L",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced monitor output left channel."
       },
       {
@@ -98,10 +120,13 @@
         "label": "Monitor Out R",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced monitor output right channel."
       },
       {
@@ -109,10 +134,13 @@
         "label": "Headphone Out",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": true,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "unbalanced_stereo",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Stereo headphone output."
       }
     ]
@@ -129,7 +157,9 @@
         "label": "MIDI Out",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "5-pin DIN MIDI output."
@@ -139,7 +169,9 @@
         "label": "MIDI Thru",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "5-pin DIN MIDI thru mirroring the MIDI In."
@@ -149,7 +181,9 @@
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "5-pin DIN MIDI input."
@@ -159,7 +193,9 @@
         "label": "Sync Out",
         "direction": "out",
         "connector": "trs_3.5mm",
-        "signals": ["sync"],
+        "signals": [
+          "sync"
+        ],
         "notes": "Analog clock output selectable PPQ."
       }
     ]
@@ -176,10 +212,13 @@
         "label": "Audio Out L",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line output."
       },
       {
@@ -187,10 +226,13 @@
         "label": "Audio Out R",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Balanced 1/4\" TRS line output."
       },
       {
@@ -198,7 +240,9 @@
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -207,7 +251,9 @@
         "label": "MIDI Out",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -216,7 +262,9 @@
         "label": "MIDI Thru",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "Mirrors incoming MIDI clock and note data."
@@ -226,7 +274,10 @@
         "label": "USB",
         "direction": "in_out",
         "connector": "usb_b",
-        "signals": ["usb_audio", "usb_midi"],
+        "signals": [
+          "usb_audio",
+          "usb_midi"
+        ],
         "notes": "Overbridge support provides multitrack audio."
       }
     ]
@@ -243,27 +294,33 @@
         "label": "Audio Out L",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS"
+        "physicalConnector": "6.35mm-trs"
       },
       {
         "id": "circuit-audio-r",
         "label": "Audio Out R",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TRS"
+        "physicalConnector": "6.35mm-trs"
       },
       {
         "id": "circuit-midi-in",
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "Supports clock and note data; TRS adapter required for 3.5 mm MIDI."
@@ -273,7 +330,9 @@
         "label": "MIDI Out",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -282,7 +341,9 @@
         "label": "Sync Out",
         "direction": "out",
         "connector": "trs_3.5mm",
-        "signals": ["sync"],
+        "signals": [
+          "sync"
+        ],
         "notes": "Outputs analog pulse clock."
       },
       {
@@ -290,7 +351,10 @@
         "label": "USB-C",
         "direction": "in_out",
         "connector": "usb_c",
-        "signals": ["usb_midi", "usb_audio"],
+        "signals": [
+          "usb_midi",
+          "usb_audio"
+        ],
         "notes": "USB audio available when connected to Novation Components."
       }
     ]
@@ -307,27 +371,35 @@
         "label": "Audio Out L",
         "direction": "out",
         "connector": "ts_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TS"
+        "audioWiring": "unbalanced_mono",
+        "physicalConnector": "6.35mm-ts"
       },
       {
         "id": "mu50-audio-r",
         "label": "Audio Out R",
         "direction": "out",
         "connector": "ts_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": false,
-        "physicalConnector": "quarter-inch-TS"
+        "audioWiring": "unbalanced_mono",
+        "physicalConnector": "6.35mm-ts"
       },
       {
         "id": "mu50-midi-in",
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -336,7 +408,9 @@
         "label": "MIDI Out",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       }
@@ -354,7 +428,9 @@
         "label": "Sync In",
         "direction": "in",
         "connector": "trs_3.5mm",
-        "signals": ["sync"],
+        "signals": [
+          "sync"
+        ],
         "notes": "Compatible with Volca sync pulse clock."
       },
       {
@@ -362,14 +438,18 @@
         "label": "Sync Out",
         "direction": "out",
         "connector": "trs_3.5mm",
-        "signals": ["sync"]
+        "signals": [
+          "sync"
+        ]
       },
       {
         "id": "volca-midi-in",
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -378,10 +458,13 @@
         "label": "Audio Out",
         "direction": "out",
         "connector": "trs_3.5mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "stereo": true,
-        "physicalConnector": "eighth-inch-TRS"
+        "audioWiring": "unbalanced_stereo",
+        "physicalConnector": "3.5mm-trs"
       }
     ]
   },
@@ -391,15 +474,20 @@
     "manufacturer": "Tascam",
     "category": "Mixer",
     "description": "Compact mixer with multitrack USB audio interface and MIDI integration.",
-    "tags": ["no_test_sound"],
+    "tags": [
+      "no_test_sound"
+    ],
     "ports": [
       {
         "id": "model12-main-out-l",
         "label": "Main Out L",
         "direction": "out",
         "connector": "xlr",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
+        "audioWiring": "balanced_mono",
         "physicalConnector": "xlr",
         "notes": "Balanced XLR master output."
       },
@@ -408,8 +496,11 @@
         "label": "Main Out R",
         "direction": "out",
         "connector": "xlr",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
+        "audioWiring": "balanced_mono",
         "physicalConnector": "xlr",
         "notes": "Balanced XLR master output."
       },
@@ -418,9 +509,12 @@
         "label": "Sub Out L",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Assignable sub mix send (balanced TRS)."
       },
       {
@@ -428,9 +522,12 @@
         "label": "Sub Out R",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "audioWiring": "balanced_mono",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Assignable sub mix send (balanced TRS)."
       },
       {
@@ -438,9 +535,11 @@
         "label": "Aux Send 1",
         "direction": "out",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Single mono aux send for external effects."
       },
       {
@@ -448,9 +547,11 @@
         "label": "Aux Return L",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Stereo aux return (use with Aux Return R)."
       },
       {
@@ -458,9 +559,11 @@
         "label": "Aux Return R",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Stereo aux return (use with Aux Return L)."
       },
       {
@@ -468,7 +571,9 @@
         "label": "Channel 1 Mic/Line",
         "direction": "in",
         "connector": "combo_xlr_trs",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "physicalConnector": "xlr",
         "notes": "Combo mic/line input with preamp and Hi-Z switch."
@@ -478,7 +583,9 @@
         "label": "Channel 2 Mic/Line",
         "direction": "in",
         "connector": "combo_xlr_trs",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
         "physicalConnector": "xlr",
         "notes": "Combo mic/line input with preamp."
@@ -488,9 +595,11 @@
         "label": "Channel 3 Line In",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Line level input (L)."
       },
       {
@@ -498,9 +607,11 @@
         "label": "Channel 4 Line In",
         "direction": "in",
         "connector": "trs_6.35mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "quarter-inch-TRS",
+        "physicalConnector": "6.35mm-trs",
         "notes": "Line level input (R)."
       },
       {
@@ -508,9 +619,11 @@
         "label": "Channel 5 Line In",
         "direction": "in",
         "connector": "trs_3.5mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "eighth-inch-TRS",
+        "physicalConnector": "3.5mm-trs",
         "notes": "Line level input (L) via 3.5 mm."
       },
       {
@@ -518,9 +631,11 @@
         "label": "Channel 6 Line In",
         "direction": "in",
         "connector": "trs_3.5mm",
-        "signals": ["audio"],
+        "signals": [
+          "audio"
+        ],
         "domain": "audio",
-        "physicalConnector": "eighth-inch-TRS",
+        "physicalConnector": "3.5mm-trs",
         "notes": "Line level input (R) via 3.5 mm."
       },
       {
@@ -528,7 +643,9 @@
         "label": "MIDI In",
         "direction": "in",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5"
       },
@@ -537,7 +654,9 @@
         "label": "MIDI Out",
         "direction": "out",
         "connector": "din_5",
-        "signals": ["midi"],
+        "signals": [
+          "midi"
+        ],
         "domain": "midi",
         "physicalConnector": "din5",
         "notes": "Sends MIDI clock for sync."
@@ -547,7 +666,10 @@
         "label": "USB-C",
         "direction": "in_out",
         "connector": "usb_c",
-        "signals": ["usb_audio", "usb_midi"],
+        "signals": [
+          "usb_audio",
+          "usb_midi"
+        ],
         "notes": "12-in/10-out USB audio interface with DAW transport control."
       }
     ]
