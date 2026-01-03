@@ -70,14 +70,12 @@ const LEGACY_CONNECTOR_MAP: Record<PortConnector, PhysicalConnector | undefined>
 const ADAPTER_MATRIX: Record<string, string[]> = {
   '3.5mm-trs:6.35mm-trs': ['stereo-breakout-cable'],
   '3.5mm-trs:6.35mm-ts': ['stereo-breakout-cable'],
-  'trs-midi:din5': ['trs-midi-to-din5'],
-  '6.35mm-ts:6.35mm-trs': ['ts-to-trs-adapter']
+  'trs-midi:din5': ['trs-midi-to-din5']
 };
 
 const ADAPTER_LABELS: Record<string, string> = {
   'stereo-breakout-cable': 'TRS stereo breakout cable',
-  'trs-midi-to-din5': 'TRS-A to DIN-5 MIDI cable',
-  'ts-to-trs-adapter': 'TS to TRS adapter'
+  'trs-midi-to-din5': 'TRS-A to DIN-5 MIDI cable'
 };
 
 const PHYSICAL_CONNECTORS: PhysicalConnector[] = [
